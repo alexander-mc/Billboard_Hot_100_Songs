@@ -1,3 +1,5 @@
 #!/usr/bin/env ruby
 
 require_relative '../lib/billboard_hot_100.rb'
+
+BillboardHot100::CLI.new.run

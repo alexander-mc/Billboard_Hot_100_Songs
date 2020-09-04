@@ -29,4 +29,6 @@ Gem::Specification.new do |spec|
 
   spec.executables   = ["billboard_hot_100"]
 
+  spec.add_dependency "colorize"
+
 end
