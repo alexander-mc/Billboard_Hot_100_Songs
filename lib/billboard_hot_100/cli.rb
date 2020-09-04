@@ -1,3 +1,6 @@
+#require_relative "../billboard_hot_100.rb"
+#require_relative "scraper.rb"
+
 class BillboardHot100::CLI
 
     def run
@@ -11,8 +14,6 @@ class BillboardHot100::CLI
     end
 
     def display_main_menu
-        # adding puts on each line works better than a heredoc,
-        # which doesn't allow you to color inidividual lines
         puts ""
         puts "            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~".light_cyan
         puts "               WELCOME TO THE BILLBOARD HOT 100 CLI!   "
@@ -32,11 +33,14 @@ class BillboardHot100::CLI
     end
 
     def create_songs
-        #songs_array = BillboardHot100::Scraper.scrape_main_page
-        #BillboardHot100::Song.create_from_collection(songs_array)
+        songs_array = BillboardHot100::Scraper.scrape_main_page
+        binding.pry
+        BillboardHot100::Song.create_from_array(songs_array)
     end
 
     def say_goodbye
     end
 
 end
+
+version1 = BillboardHot100::CLI.new.create_songs

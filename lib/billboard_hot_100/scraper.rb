@@ -1,5 +1,3 @@
-require_relative "../billboard_hot_100.rb"
-
 class BillboardHot100::Scraper
 
     BASE_PATH = "https://www.billboard.com/charts/hot-100"
@@ -20,5 +18,3 @@ class BillboardHot100::Scraper
         end
     end
 end
-
-BillboardHot100::Scraper.scrape_main_page
