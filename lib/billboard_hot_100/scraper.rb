@@ -9,12 +9,13 @@ class BillboardHot100::Scraper
             song = {}
             song[:name] = element.css("span.chart-element__information__song").text
             song[:artist] = element.css("span.chart-element__information__artist").text
-            song[:rank] = element.css("span.chart-element__rank__number").text
+            song[:rank_this_week] = element.css("span.chart-element__rank__number").text
             song[:delta] = element.css("span.chart-element__information__delta__text.text--default").text
-            song[:delta_last_week] = element.css("span.chart-element__information__delta__text.text--last").text
-            song[:peak] = element.css("span.chart-element__information__delta__text.text--peak").text
-            song[:duration] = element.css("span.chart-element__information__delta__text.text--week").text
+            song[:rank_last_week] = element.css("span.chart-element__information__delta__text.text--last").text.gsub(" Last Week","")
+            song[:peak_rank] = element.css("span.chart-element__information__delta__text.text--peak").text.gsub(" Peak Rank","")
+            song[:duration] = element.css("span.chart-element__information__delta__text.text--week").text.gsub(" Weeks on Chart","")
             song
         end
+
     end
 end

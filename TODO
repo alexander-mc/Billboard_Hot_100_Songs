@@ -141,9 +141,9 @@ MAIN MENU
 DATASETS - HOW DO YOU WANT THE DATA SORTED?         
 -------------------------------------------
 
-1 | Sort by rank.
-2 | Sort by peak.
-3 | Sort by duration.
+1 | Sort by this week's rank.
+2 | Sort by peak rank.
+3 | Sort by duration on charts.
 4 | Return to the main menu.
 5 | Exit.
 
