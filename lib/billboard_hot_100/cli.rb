@@ -31,26 +31,6 @@ class BillboardHot100::CLI
         say_goodbye
     end
 
-    def check_main_menu_input
-        if !@main_menu_options.include?(@input)
-            puts "Please enter a number 1 - 5. Enter [5] to exit."
-            @input = gets.strip
-            check_main_menu_input
-        end
-    end
-
-    def restart_menu 
-        display_restart_menu
-        @input = gets.strip
-
-        while @input != "1" && @input != "2" # [1] = Restart program, [2] = Exit
-            puts "Please enter [1] or [2]."
-            @input = gets.strip
-        end
-
-        start if @input == "1"
-    end
-
     def display_main_menu
         puts ""
         puts "#{@indent}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~".light_cyan
@@ -70,27 +50,43 @@ class BillboardHot100::CLI
         puts "#{@indent}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~".light_cyan
     end
 
-    def display_restart_menu
+    def check_main_menu_input
+        if !@main_menu_options.include?(@input)
+            puts "Please enter a number 1 - 5. Enter [5] to exit."
+            @input = gets.strip
+            check_main_menu_input
+        end
+    end
+
+    def display_top_10_songs
+        puts "#{@indent}-------------------------------------------"
+        puts "#{@indent}THIS WEEK'S TOP 10 SONGS                   "
+        puts "#{@indent}-------------------------------------------"
+        puts ""
+        puts "#{@indent}RANK (CHANGE) - SONG - ARTIST              "  
+        puts BillboardHot100::Song.list_top_10_by_rank_this_week
     end
 
     def display_top_100_songs
-        puts BillboardHot100::Song.list_by_rank_this_week
+        puts BillboardHot100::Song.list_top_100_by_rank_this_week
     end
-    
-    def list_top_100_songs
-        songs = BillboardHot100::Song.sort_by_rank_this_week
-        songs.map {|song| "# #{songs.rank_this_week} (#{songs.delta}) - #{songs.name} - #{songs.artist}"}
+
+    def restart_menu 
+        display_restart_menu
+        @input = gets.strip
+
+        while @input != "1" && @input != "2" # [1] = Restart program, [2] = Exit
+            puts "Please enter [1] or [2]."
+            @input = gets.strip
+        end
+
+        start if @input == "1"
+    end
+
+    def display_restart_menu
     end
 
     <<-DOC
-    -------------------------------------------
-    THIS WEEK'S TOP 10 SONGS         
-    -------------------------------------------
-    
-    RANK (CHANGE) - SONG - ARTIST
-    # 1 (-) - Hello - Adele
-    # 2 (+2) - Dancing with a stranger - Sam Smith
-    # 3 (-1) - WAP - Cardi B Featuring Megan Thee Stallion
     
     -------------------------------------------
     
@@ -102,13 +98,21 @@ class BillboardHot100::CLI
     -------------------------------------------
     DOC
 
-    def display_top_10_songs
-    end
-
     def display_analyses_menu
     end
 
     def display_datasets_menu
+        display_dataset_by_rank_this_week
+    end
+
+    def display_dataset_by_rank_this_week
+        puts BillboardHot100::Song.list_dataset_by_rank_this_week
+    end
+
+    def display_dataset_by_peak_rank
+    end
+
+    def display_dataset_by_duration
     end
 
     def say_goodbye
