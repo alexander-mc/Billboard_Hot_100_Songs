@@ -74,9 +74,14 @@ class BillboardHot100::CLI
     end
 
     def display_top_100_songs
-        BillboardHot100::Song.sort_by_rank_this_week
+        puts BillboardHot100::Song.list_by_rank_this_week
     end
     
+    def list_top_100_songs
+        songs = BillboardHot100::Song.sort_by_rank_this_week
+        songs.map {|song| "# #{songs.rank_this_week} (#{songs.delta}) - #{songs.name} - #{songs.artist}"}
+    end
+
     <<-DOC
     -------------------------------------------
     THIS WEEK'S TOP 10 SONGS         

@@ -17,8 +17,9 @@ class BillboardHot100::Song
         @@all
     end
 
-    def self.sort_by_rank_this_week
-        self.all.sort_by {|song| song.rank_this_week.to_i}
+    def self.list_by_rank_this_week
+        sorted_songs = self.all.sort_by {|song| song.rank_this_week.to_i}
+        sorted_songs.map {|song| "RANK #{song.rank_this_week} (#{song.delta}) - #{song.name} - #{song.artist}"}
     end
 
     def self.sort_by_peak_rank
