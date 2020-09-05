@@ -22,9 +22,11 @@ class BillboardHot100::Song
     end
 
     def self.sort_by_peak_rank
+        self.all.sort_by {|song| song.peak_rank.to_i}
     end
 
     def self.sort_by_duration
+        self.all.sort_by {|song| song.duration.to_i}.reverse
     end
 
     # Methods below are not used in this program but may be helpful for future ones

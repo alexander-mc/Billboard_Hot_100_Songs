@@ -2,20 +2,53 @@ class BillboardHot100::CLI
 
     def initialize  
         create_songs
-        @exit = "5" # This must match the exit option in main menu
-        @restart = nil
-        @indent = " " * 12 # Adjust indent spacing o your preference
-    end
-
-    def start
-        display_main_menu
-        run_main_menu
-        say_goodbye
+        @indent = " " * 12 # Adjust indent spacing to your preference
     end
 
     def create_songs
         song_array = BillboardHot100::Scraper.scrape_main_page
         BillboardHot100::Song.create_from_array(song_array)
+    end
+
+    def start
+        display_main_menu
+        @input = gets.strip
+        @main_menu_options = ["1", "2", "3", "4", "5"]
+        check_main_menu_input
+
+        case @input
+            when "1"
+                display_top_10_songs
+            when "2"
+                display_top_100_songs
+            when "3"
+                display_analyses_menu
+            when "4"
+                display_datasets_menu
+        end
+
+        restart_menu unless @input == "5" # User enters [5] to exit.
+        say_goodbye
+    end
+
+    def check_main_menu_input
+        if !@main_menu_options.include?(@input)
+            puts "Please enter a number 1 - 5. Enter [5] to exit."
+            @input = gets.strip
+            check_main_menu_input
+        end
+    end
+
+    def restart_menu 
+        display_restart_menu
+        @input = gets.strip
+
+        while @input != "1" && @input != "2" # [1] = Restart program, [2] = Exit
+            puts "Please enter [1] or [2]."
+            @input = gets.strip
+        end
+
+        start if @input == "1"
     end
 
     def display_main_menu
@@ -37,32 +70,11 @@ class BillboardHot100::CLI
         puts "#{@indent}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~".light_cyan
     end
 
-    def run_main_menu
-        input = gets.strip
-        
-        while input != @exit
-            case input
-                when "1"
-                    display_top_10_songs
-                when "2"
-                    display_top_100_songs
-                    input = @exit
-                when "3"
-                    display_analyses_menu
-                when "4"
-                    display_datasets_menu
-                when @exit
-                    input = @exit
-                else
-                    puts "Please enter a number 1 - 5. Enter [5] to exit."
-                    input = gets.strip
-            end
-        end
-        start if input == @restart
+    def display_restart_menu
     end
 
     def display_top_100_songs
-        puts BillboardHot100::Song.sort_by_rank_this_week
+        BillboardHot100::Song.sort_by_rank_this_week
     end
     
     <<-DOC
@@ -96,5 +108,11 @@ class BillboardHot100::CLI
 
     def say_goodbye
     end
+
+    # def start
+    #     display_main_menu
+    #     run_main_menu
+    #     say_goodbye
+    # end
 
 end
