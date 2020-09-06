@@ -54,14 +54,6 @@ class BillboardHot100::CLI
         puts "#{@indent}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~".light_cyan
     end
 
-    def check_input(menu_options)
-        if !menu_options.include?(@input)
-            puts "Please enter a number 1 - #{menu_options.last}. Enter [#{menu_options.last}] to exit."
-            @input = gets.strip
-            check_input(menu_options)
-        end
-    end
-
     def display_top_10_songs
         puts "#{@indent}-------------------------------------------"
         puts "#{@indent}THIS WEEK'S TOP 10 SONGS                   "
@@ -184,7 +176,7 @@ class BillboardHot100::CLI
     def display_dataset_by_duration
     end
 
-    # Restart options
+    # RETURN MENUS
 
     # def display_restart_options
     #     restart_menu_2_options if input == "1" || input == "2"
@@ -194,11 +186,9 @@ class BillboardHot100::CLI
     def restart_or_exit_menu 
         display_restart_or_exit_menu
         @input = gets.strip
-
-        while @input != "1" && @input != "2" # [1] = Restart program, [2] = Exit
-            puts "Please enter [1] or [2]."
-            @input = gets.strip
-        end
+#        check_input_2_options
+        menu_options = ["1", "2"]
+        check_input(menu_options)
 
         @restart = true if @input == "1"
     end
@@ -221,7 +211,7 @@ class BillboardHot100::CLI
         check_input(menu_options)
         
         go_to_analyses_menu if @input == "1"
-        @restart == true if @input == "2"
+        @restart = true if @input == "2"
     end
 
     def display_return_menu_3_options
@@ -236,6 +226,33 @@ class BillboardHot100::CLI
         puts "#{@indent}-------------------------------------------"
     end
 
+    # CHECK INPUTS
+
+    def check_input(menu_options)
+        while !menu_options.include?(@input)
+            input_error_message(menu_options)
+            @input = gets.strip
+        end
+    end
+
+    # ERROR MESSAGES
+
+    def input_error_message(menu_options)
+        if menu_options.size == 2
+            puts "Please enter [1] or [2]."
+        else
+            puts "Please enter a number 1 - #{menu_options.last}. Enter [#{menu_options.last}] to exit."    
+        end
+    end
+
+    # def check_input_2_options # [1] = Restart, [2] = Exit
+    #     while @input != "1" && @input != "2"
+    #         puts "Please enter [1] or [2]."      
+    #         @input = gets.strip
+    #     end
+    # end
+    
+    # GOODBYE MESSAGE
 
     def say_goodbye
     end
