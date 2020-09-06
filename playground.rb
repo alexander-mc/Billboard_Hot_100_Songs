@@ -19,6 +19,12 @@
 
 ## #last
 
-a = ["1", "2"]
-puts a.first
-puts a.last
+# a = ["1", "2"]
+# puts a.first
+# puts a.last
+
+# Color palatte
+
+require 'colorize'
+
+String.color_samples

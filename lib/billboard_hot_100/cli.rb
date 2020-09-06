@@ -102,7 +102,7 @@ class BillboardHot100::CLI
                 @exit = true
         end
 
-        return_menu_3_options unless @restart || @exit
+        return_menu_with_3_options unless @restart || @exit
     end
 
     def display_analyses_menu
@@ -146,12 +146,12 @@ class BillboardHot100::CLI
     end
 
     def display_top_10_by_duration
-
         puts "#{@indent}-------------------------------------------"
         puts "#{@indent}TOP 10 SONGS ON THE CHART LONGEST          "
         puts "#{@indent}-------------------------------------------"
         puts ""
         puts "#{@indent}DURATION - RANK (CHANGE) - PEAK - SONG - ARTIST"
+        puts ""
         BillboardHot100::Song.select_top_10_by_duration.each do |song|
             puts "#{@indent}#{song.duration} WEEKS - RANK #{song.rank_this_week} (#{song.delta}) - PEAK #{song.peak_rank} - #{song.name} - #{song.artist}" 
         end
@@ -178,7 +178,7 @@ class BillboardHot100::CLI
                 @exit = true
         end
 
-        return_menu_3_options unless @restart || @exit
+        return_menu_with_3_options unless @restart || @exit
     end
 
     def display_dataset_menu
@@ -196,13 +196,42 @@ class BillboardHot100::CLI
     end
 
     def display_dataset_by_rank_this_week
-        puts BillboardHot100::Song.list_dataset_by_rank_this_week
+        puts "#{@indent}-------------------------------------------"
+        puts "#{@indent}ALL DATA BY RANK THIS WEEK                 "
+        puts "#{@indent}-------------------------------------------"
+        puts ""
+        puts "#{@indent}RANK (CHANGE) - PEAK - DURATION - SONG - ARTIST"
+        puts ""
+        BillboardHot100::Song.sort_by_rank_this_week.each do |song|
+            puts "#{@indent}RANK #{song.rank_this_week} (#{song.delta}) - PEAK #{song.peak_rank} - #{song.duration} WEEKS - #{song.name} - #{song.artist}"
+        end
+        puts""
     end
 
     def display_dataset_by_peak_rank
+        puts "#{@indent}-------------------------------------------"
+        puts "#{@indent}ALL DATA BY PEAK RANK                      "
+        puts "#{@indent}-------------------------------------------"
+        puts ""
+        puts "#{@indent}PEAK - RANK (CHANGE) - DURATION - SONG - ARTIST"
+        puts ""
+        BillboardHot100::Song.sort_by_peak_rank.each do |song|
+            puts "#{@indent}PEAK #{song.peak_rank} - RANK #{song.rank_this_week} (#{song.delta}) - #{song.duration} WEEKS - #{song.name} - #{song.artist}"
+        end
+        puts ""
     end
 
     def display_dataset_by_duration
+        puts "#{@indent}-------------------------------------------"
+        puts "#{@indent}ALL DATA BY DURATION                       "
+        puts "#{@indent}-------------------------------------------"
+        puts ""
+        puts "#{@indent}DURATION - RANK (CHANGE) - PEAK - SONG - ARTIST"
+        puts ""
+        BillboardHot100::Song.sort_by_duration.each do |song|
+            puts "#{@indent}#{song.duration} WEEKS - RANK #{song.rank_this_week} (#{song.delta}) - PEAK #{song.peak_rank} - #{song.name} - #{song.artist}"
+        end
+        puts ""
     end
 
     # RETURN MENUS
@@ -234,7 +263,7 @@ class BillboardHot100::CLI
         check_input(menu_options)
         
         go_to_analyses_menu if @input == "1"
-        @restart = true if @input == "2"
+        @input == "2" ? @restart = true : @exit = true
     end
 
     def display_return_menu_with_3_options
@@ -278,6 +307,10 @@ class BillboardHot100::CLI
     # GOODBYE MESSAGE
 
     def say_goodbye
+        puts "#{@indent}-------------------------------------------".red
+        puts "#{@indent}       ♭ ♫ ♯ ♪ SEE YOU SOON! ♪ ♯ ♫ ♭       "
+        puts "#{@indent}-------------------------------------------".red
+        puts ""
     end
 
 end

@@ -23,10 +23,6 @@ class BillboardHot100::Song
         self.all.sort_by {|song| song.rank_this_week.to_i}
     end
 
-    def self.list_dataset_by_rank_this_week # remove?
-        self.sort_by_rank_this_week.map {|song| "RANK #{song.rank_this_week} (#{song.delta}) - PEAK #{song.peak_rank} - #{song.duration} WEEKS - #{song.name} - #{song.artist}"}
-    end
-
     # SONGS BY DURATION
 
     def self.select_new_songs
@@ -47,7 +43,7 @@ class BillboardHot100::Song
         self.sort_by_rank_this_week.select {|song| song.peak_rank == "1"}
     end
 
-    def self.sort_by_peak_rank # will you use this?
+    def self.sort_by_peak_rank
         self.all.sort_by {|song| song.peak_rank.to_i}
     end
 
