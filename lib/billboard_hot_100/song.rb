@@ -47,9 +47,7 @@ class BillboardHot100::Song
         self.all.sort_by {|song| song.peak_rank.to_i}
     end
 
-
-
-    # Methods below are not used in this program but may be helpful for future ones
+    # UNUSED METHODS - MAY BE USEFUL FOR FUTURE PROGRAMS
 
     def self.find_by_rank_this_week(rank_this_week)
         self.all.find{|song| song.rank_this_week == rank_this_week}

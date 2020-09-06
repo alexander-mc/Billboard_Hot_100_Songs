@@ -5,7 +5,8 @@ class BillboardHot100::Scraper
     def self.scrape_main_page      
         page_data = Nokogiri::HTML(open(BASE_PATH))
 
-         # To work offline, uncode next two lines and comment above code + BASE_PATH.
+         # BACKUP HTML
+         # To work offline, uncomment the next two lines and comment above code + BASE_PATH.
          # html_backup = File.read('backup_website/billboard_hot_100.html')
          # page_data = Nokogiri::HTML(html_backup)       
         
