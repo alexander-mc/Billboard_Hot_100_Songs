@@ -208,3 +208,22 @@ WHAT WOULD YOU LIKE TO DO NOW?
 -------------------------------------------
 
 ♬ ♩ ♫ ♪ ♭ ♮ ♯ ♬ ♩ ♫ ♪ ♭ ♮ ♯ ♬ ♩ ♫ ♪ ♭ ♮ ♯ ♬
+
+Colorize color palette
+
+         :black on :default                 :black on :default       
+   :light_black on :default           :light_black on :default       
+           :red on :default                   :red on :default       
+     :light_red on :default             :light_red on :default       
+         :green on :default                 :green on :default       
+   :light_green on :default           :light_green on :default       
+        :yellow on :default                :yellow on :default       
+  :light_yellow on :default          :light_yellow on :default       
+          :blue on :default                  :blue on :default       
+    :light_blue on :default            :light_blue on :default       
+       :magenta on :default               :magenta on :default       
+ :light_magenta on :default         :light_magenta on :default       
+          :cyan on :default                  :cyan on :default       
+    :light_cyan on :default            :light_cyan on :default       
+         :white on :default                 :white on :default       
+   :light_white on :default           :light_white on :default  

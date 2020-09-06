@@ -10,6 +10,8 @@ class BillboardHot100::CLI
         BillboardHot100::Song.create_from_array(song_array)
     end
 
+    # MAIN MENU
+
     def start
         display_main_menu
         menu_options = ["1", "2", "3", "4", "5"]
@@ -55,9 +57,9 @@ class BillboardHot100::CLI
     end
 
     def display_top_10_songs
-        puts "#{@indent}-------------------------------------------"
+        puts "#{@indent}-------------------------------------------".light_green
         puts "#{@indent}THIS WEEK'S TOP 10 SONGS                   "
-        puts "#{@indent}-------------------------------------------"
+        puts "#{@indent}-------------------------------------------".light_green
         puts ""
         puts "#{@indent}RANK (CHANGE) - SONG - ARTIST              "
         puts ""
@@ -66,9 +68,9 @@ class BillboardHot100::CLI
     end
 
     def display_top_100_songs
-        puts "#{@indent}-------------------------------------------"
+        puts "#{@indent}-------------------------------------------".light_green
         puts "#{@indent}THIS WEEK'S TOP 100 SONGS                  "
-        puts "#{@indent}-------------------------------------------"
+        puts "#{@indent}-------------------------------------------".light_green
         puts ""
         puts "#{@indent}RANK (CHANGE) - SONG - ARTIST              "
         puts ""
@@ -81,6 +83,8 @@ class BillboardHot100::CLI
             "RANK #{song.rank_this_week} (#{song.delta}) - #{song.name} - #{song.artist}"
         end
     end
+
+    # ANALYSES MENU
 
     def go_to_analyses_menu
         display_analyses_menu
@@ -106,9 +110,9 @@ class BillboardHot100::CLI
     end
 
     def display_analyses_menu
-        puts "#{@indent}-------------------------------------------"
+        puts "#{@indent}-------------------------------------------".light_green
         puts "#{@indent}ANALYSES - WHAT DO YOU WANT TO KNOW?       "
-        puts "#{@indent}-------------------------------------------"
+        puts "#{@indent}-------------------------------------------".light_green
         puts ""                                                    
         puts "#{@indent}1 | Which songs are new this week?         "
         puts "#{@indent}2 | Which songs have peaked #1?            "
@@ -116,13 +120,13 @@ class BillboardHot100::CLI
         puts "#{@indent}4 | Return to the main menu                "
         puts "#{@indent}5 | Exit                                   "
         puts ""                                           
-        puts "#{@indent}-------------------------------------------"
+        puts "#{@indent}-------------------------------------------".light_green
     end
 
     def display_new_songs_this_week
-        puts "#{@indent}-------------------------------------------"
+        puts "#{@indent}-------------------------------------------".light_green
         puts "#{@indent}THIS WEEK'S NEW SONGS                      "
-        puts "#{@indent}-------------------------------------------"
+        puts "#{@indent}-------------------------------------------".light_green
         puts ""
         puts "#{@indent}DURATION - RANK - SONG - ARTIST            "
         puts ""
@@ -133,9 +137,9 @@ class BillboardHot100::CLI
     end
 
     def display_no_1_peak_songs
-        puts "#{@indent}-------------------------------------------"
+        puts "#{@indent}-------------------------------------------".light_green
         puts "#{@indent}ALL SONGS THAT HAVE PEAKED #1              "
-        puts "#{@indent}-------------------------------------------"
+        puts "#{@indent}-------------------------------------------".light_green
         puts ""
         puts "#{@indent}PEAK - RANK (CHANGE) - DURATION - SONG - ARTIST   " 
         puts ""
@@ -146,9 +150,9 @@ class BillboardHot100::CLI
     end
 
     def display_top_10_by_duration
-        puts "#{@indent}-------------------------------------------"
+        puts "#{@indent}-------------------------------------------".light_green
         puts "#{@indent}TOP 10 SONGS ON THE CHART LONGEST          "
-        puts "#{@indent}-------------------------------------------"
+        puts "#{@indent}-------------------------------------------".light_green
         puts ""
         puts "#{@indent}DURATION - RANK (CHANGE) - PEAK - SONG - ARTIST"
         puts ""
@@ -157,6 +161,8 @@ class BillboardHot100::CLI
         end
         puts""
     end
+
+    # DATASETS MENU
 
     def go_to_datasets_menu
         display_dataset_menu
@@ -182,9 +188,9 @@ class BillboardHot100::CLI
     end
 
     def display_dataset_menu
-        puts "#{@indent}-------------------------------------------"
+        puts "#{@indent}-------------------------------------------".light_green
         puts "#{@indent}DATASETS - HOW DO YOU WANT THE DATA SORTED?"        
-        puts "#{@indent}-------------------------------------------"
+        puts "#{@indent}-------------------------------------------".light_green
         puts ""
         puts "#{@indent}1 | Sort by this week's rank               " 
         puts "#{@indent}2 | Sort by peak rank                      " 
@@ -192,13 +198,13 @@ class BillboardHot100::CLI
         puts "#{@indent}4 | Return to the main menu                "     
         puts "#{@indent}5 | Exit                                   "  
         puts ""                                                     
-        puts "#{@indent}-------------------------------------------"
+        puts "#{@indent}-------------------------------------------".light_green
     end
 
     def display_dataset_by_rank_this_week
-        puts "#{@indent}-------------------------------------------"
+        puts "#{@indent}-------------------------------------------".light_green
         puts "#{@indent}ALL DATA BY RANK THIS WEEK                 "
-        puts "#{@indent}-------------------------------------------"
+        puts "#{@indent}-------------------------------------------".light_green
         puts ""
         puts "#{@indent}RANK (CHANGE) - PEAK - DURATION - SONG - ARTIST"
         puts ""
@@ -209,9 +215,9 @@ class BillboardHot100::CLI
     end
 
     def display_dataset_by_peak_rank
-        puts "#{@indent}-------------------------------------------"
+        puts "#{@indent}-------------------------------------------".light_green
         puts "#{@indent}ALL DATA BY PEAK RANK                      "
-        puts "#{@indent}-------------------------------------------"
+        puts "#{@indent}-------------------------------------------".light_green
         puts ""
         puts "#{@indent}PEAK - RANK (CHANGE) - DURATION - SONG - ARTIST"
         puts ""
@@ -222,9 +228,9 @@ class BillboardHot100::CLI
     end
 
     def display_dataset_by_duration
-        puts "#{@indent}-------------------------------------------"
+        puts "#{@indent}-------------------------------------------".light_green
         puts "#{@indent}ALL DATA BY DURATION                       "
-        puts "#{@indent}-------------------------------------------"
+        puts "#{@indent}-------------------------------------------".light_green
         puts ""
         puts "#{@indent}DURATION - RANK (CHANGE) - PEAK - SONG - ARTIST"
         puts ""
@@ -242,18 +248,18 @@ class BillboardHot100::CLI
         menu_options = ["1", "2"]
         check_input(menu_options)
 
-        @restart = true if @input == "1"
+        @input == "1" ? @restart = true : @exit = true
     end
 
     def display_restart_or_exit_menu
-        puts "#{@indent}-------------------------------------------"
+        puts "#{@indent}-------------------------------------------".light_green
         puts "#{@indent}                                           "
         puts "#{@indent}WHAT WOULD YOU LIKE TO DO NOW?             "
         puts "#{@indent}                                           "
         puts "#{@indent}1 | Go back to the main menu               "
         puts "#{@indent}2 | Exit                                   "
         puts "#{@indent}                                           "
-        puts "#{@indent}-------------------------------------------"
+        puts "#{@indent}-------------------------------------------".light_green
     end
 
     def return_menu_with_3_options 
@@ -262,12 +268,18 @@ class BillboardHot100::CLI
         menu_options = ["1", "2", "3"]
         check_input(menu_options)
         
-        go_to_analyses_menu if @input == "1"
-        @input == "2" ? @restart = true : @exit = true
+        case @input
+            when "1"
+                go_to_analyses_menu
+            when "2"
+                restart = true
+            when "3"
+                @exit = true
+        end
     end
 
     def display_return_menu_with_3_options
-        puts "#{@indent}-------------------------------------------"
+        puts "#{@indent}-------------------------------------------".light_green
         puts "#{@indent}                                           "
         puts "#{@indent}WHAT WOULD YOU LIKE TO DO NOW?             "
         puts "#{@indent}                                           "
@@ -275,7 +287,7 @@ class BillboardHot100::CLI
         puts "#{@indent}2 | Go back to the main menu               "
         puts "#{@indent}3 | Exit                                   "
         puts "#{@indent}                                           "
-        puts "#{@indent}-------------------------------------------"
+        puts "#{@indent}-------------------------------------------".light_green
     end
 
     # CHECK INPUTS
@@ -297,19 +309,12 @@ class BillboardHot100::CLI
         end
     end
 
-    # def check_input_2_options # [1] = Restart, [2] = Exit
-    #     while @input != "1" && @input != "2"
-    #         puts "Please enter [1] or [2]."      
-    #         @input = gets.strip
-    #     end
-    # end
-    
     # GOODBYE MESSAGE
 
     def say_goodbye
-        puts "#{@indent}-------------------------------------------".red
+        puts "#{@indent}-------------------------------------------".light_cyan
         puts "#{@indent}       ♭ ♫ ♯ ♪ SEE YOU SOON! ♪ ♯ ♫ ♭       "
-        puts "#{@indent}-------------------------------------------".red
+        puts "#{@indent}-------------------------------------------".light_cyan
         puts ""
     end
 
