@@ -17,29 +17,41 @@ class BillboardHot100::Song
         @@all
     end
 
+    # SONGS BY RANK
+
     def self.sort_by_rank_this_week
         self.all.sort_by {|song| song.rank_this_week.to_i}
     end
 
-    def self.list_top_100_by_rank_this_week
-        self.sort_by_rank_this_week.map {|song| "RANK #{song.rank_this_week} (#{song.delta}) - #{song.name} - #{song.artist}"}
-    end
-
-    def self.list_top_10_by_rank_this_week
-        self.list_top_100_by_rank_this_week[0, 10]
-    end
-
-    def self.list_dataset_by_rank_this_week
+    def self.list_dataset_by_rank_this_week # remove?
         self.sort_by_rank_this_week.map {|song| "RANK #{song.rank_this_week} (#{song.delta}) - PEAK #{song.peak_rank} - #{song.duration} WEEKS - #{song.name} - #{song.artist}"}
     end
 
-    def self.sort_by_peak_rank
+    # SONGS BY DURATION
+
+    def self.select_new_songs
+        self.sort_by_rank_this_week.select {|song| song.duration == "1"}
+    end
+
+    def self.sort_by_duration # By descending order
+        self.all.sort_by {|song| song.duration.to_i}.reverse
+    end
+
+    def self.select_top_10_by_duration
+        self.sort_by_duration[0, 10]
+    end
+
+    # SONGS BY PEAK RANK
+    
+    def self.select_no_1_peak_songs
+        self.sort_by_rank_this_week.select {|song| song.peak_rank == "1"}
+    end
+
+    def self.sort_by_peak_rank # will you use this?
         self.all.sort_by {|song| song.peak_rank.to_i}
     end
 
-    def self.sort_by_duration
-        self.all.sort_by {|song| song.duration.to_i}.reverse
-    end
+
 
     # Methods below are not used in this program but may be helpful for future ones
 
