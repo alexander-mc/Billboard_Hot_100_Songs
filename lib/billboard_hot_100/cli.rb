@@ -32,7 +32,7 @@ class BillboardHot100::CLI
             when "5"
                 @exit = true
         end
-
+        binding.pry
         restart_or_exit_menu unless @restart || @exit
         @restart ? start : say_goodbye
     end
@@ -272,7 +272,7 @@ class BillboardHot100::CLI
             when "1"
                 go_to_analyses_menu
             when "2"
-                restart = true
+                @restart = true
             when "3"
                 @exit = true
         end
