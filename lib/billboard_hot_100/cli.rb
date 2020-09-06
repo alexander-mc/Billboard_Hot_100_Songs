@@ -160,10 +160,39 @@ class BillboardHot100::CLI
 
     def go_to_datasets_menu
         display_dataset_menu
+        menu_options = ["1", "2", "3", "4", "5"]
+        @input = gets.strip
+
+        check_input(menu_options)
+
+        case @input
+            when "1"
+                display_dataset_by_rank_this_week
+            when "2"
+                display_dataset_by_peak_rank
+            when "3"
+                display_dataset_by_duration
+            when "4"
+                @restart = true
+            when "5"
+                @exit = true
+        end
+
+        return_menu_3_options unless @restart || @exit
     end
 
     def display_dataset_menu
-        display_dataset_by_rank_this_week
+        puts "#{@indent}-------------------------------------------"
+        puts "#{@indent}DATASETS - HOW DO YOU WANT THE DATA SORTED?"        
+        puts "#{@indent}-------------------------------------------"
+        puts ""
+        puts "#{@indent}1 | Sort by this week's rank               " 
+        puts "#{@indent}2 | Sort by peak rank                      " 
+        puts "#{@indent}3 | Sort by duration on charts             " 
+        puts "#{@indent}4 | Return to the main menu                "     
+        puts "#{@indent}5 | Exit                                   "  
+        puts ""                                                     
+        puts "#{@indent}-------------------------------------------"
     end
 
     def display_dataset_by_rank_this_week
@@ -178,15 +207,9 @@ class BillboardHot100::CLI
 
     # RETURN MENUS
 
-    # def display_restart_options
-    #     restart_menu_2_options if input == "1" || input == "2"
-    #     restart menu_3_options if input == "3" || input == "4"
-    # end
-
     def restart_or_exit_menu 
         display_restart_or_exit_menu
         @input = gets.strip
-#        check_input_2_options
         menu_options = ["1", "2"]
         check_input(menu_options)
 
@@ -204,8 +227,8 @@ class BillboardHot100::CLI
         puts "#{@indent}-------------------------------------------"
     end
 
-    def return_menu_3_options 
-        display_return_menu_3_options
+    def return_menu_with_3_options 
+        display_return_menu_with_3_options
         @input = gets.strip
         menu_options = ["1", "2", "3"]
         check_input(menu_options)
@@ -214,7 +237,7 @@ class BillboardHot100::CLI
         @restart = true if @input == "2"
     end
 
-    def display_return_menu_3_options
+    def display_return_menu_with_3_options
         puts "#{@indent}-------------------------------------------"
         puts "#{@indent}                                           "
         puts "#{@indent}WHAT WOULD YOU LIKE TO DO NOW?             "
