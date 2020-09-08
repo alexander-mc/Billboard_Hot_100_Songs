@@ -1,8 +1,8 @@
-# Billboard Hot 100 Chart
+# Billboard Hot 100 Songs
 
 Want to know what the hottest songs are this week? What about an easy way to get data from the Billboard Hot 100 without being bombarded with videos and ads?
 
-This Ruby Gem allows you to access data on the Billboard Hot 100 (https://www.billboard.com/charts/hot-100) through the command line. Quickly generate the list of this week's Hot 100 songs with the following information,
+This Ruby Gem allows you to access data on the Billboard Hot 100 (https://www.billboard.com/charts/hot-100) from the command line. Quickly generate the list of this week's Hot 100 songs with the following information,
 
 ♪ Song name
 ♪ Artist(s)
@@ -21,13 +21,13 @@ Go ahead and check it out. Enjoy!
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-    $ gem install billboard_hot_100
+    $ gem install billboard_hot_100_songs
 
 ## Usage
 
-TODO: Write usage instructions here
+Type the below and follow the on screen prompts.
+
+    $ bin/billboard_top_songs
 
 ## Development
 
@@ -37,13 +37,8 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/<github username>/billboard_hot_100. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/<github username>/billboard_hot_100/blob/master/CODE_OF_CONDUCT.md).
-
+Bug reports and pull requests are welcome on GitHub at https://github.com/alexander-mc/billboard_hot_100_songs. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
-## Code of Conduct
-
-Everyone interacting in the BillboardHot100 project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/<github username>/billboard_hot_100/blob/master/CODE_OF_CONDUCT.md).

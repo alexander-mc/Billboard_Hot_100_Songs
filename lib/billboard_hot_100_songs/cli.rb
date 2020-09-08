@@ -1,4 +1,4 @@
-class BillboardHot100::CLI
+class BillboardHot100Songs::CLI
 
     def initialize  
         create_songs
@@ -6,8 +6,8 @@ class BillboardHot100::CLI
     end
 
     def create_songs
-        song_array = BillboardHot100::Scraper.scrape_main_page
-        BillboardHot100::Song.create_from_array(song_array)
+        song_array = BillboardHot100Songs::Scraper.scrape_main_page
+        BillboardHot100Songs::Song.create_from_array(song_array)
     end
 
     # MAIN MENU
@@ -83,7 +83,7 @@ class BillboardHot100::CLI
     end
 
     def list_top_100_songs_this_week
-        BillboardHot100::Song.sort_by_rank_this_week.map do |song|
+        BillboardHot100Songs::Song.sort_by_rank_this_week.map do |song|
             "RANK #{song.rank_this_week} (#{song.delta}) - #{song.name} - #{song.artist}"
         end
     end
@@ -134,7 +134,7 @@ class BillboardHot100::CLI
         puts ""
         puts "#{@indent}DURATION - RANK - SONG - ARTIST            "
         puts ""
-        BillboardHot100::Song.select_new_songs.each do |song|
+        BillboardHot100Songs::Song.select_new_songs.each do |song|
             puts "#{@indent}#{song.duration} WEEK - RANK #{song.rank_this_week} - #{song.name} - #{song.artist}"
         end
         puts ""
@@ -147,7 +147,7 @@ class BillboardHot100::CLI
         puts ""
         puts "#{@indent}PEAK - RANK (CHANGE) - DURATION - SONG - ARTIST   " 
         puts ""
-        BillboardHot100::Song.select_no_1_peak_songs.each do |song|
+        BillboardHot100Songs::Song.select_no_1_peak_songs.each do |song|
             puts "#{@indent}PEAK #{song.peak_rank} - RANK #{song.rank_this_week} (#{song.delta}) - #{song.duration} WEEKS - #{song.name} - #{song.artist}" 
         end
         puts ""   
@@ -160,7 +160,7 @@ class BillboardHot100::CLI
         puts ""
         puts "#{@indent}DURATION - RANK (CHANGE) - PEAK - SONG - ARTIST"
         puts ""
-        BillboardHot100::Song.select_top_10_by_duration.each do |song|
+        BillboardHot100Songs::Song.select_top_10_by_duration.each do |song|
             puts "#{@indent}#{song.duration} WEEKS - RANK #{song.rank_this_week} (#{song.delta}) - PEAK #{song.peak_rank} - #{song.name} - #{song.artist}" 
         end
         puts""
@@ -212,7 +212,7 @@ class BillboardHot100::CLI
         puts ""
         puts "#{@indent}RANK (CHANGE) - PEAK - DURATION - SONG - ARTIST"
         puts ""
-        BillboardHot100::Song.sort_by_rank_this_week.each do |song|
+        BillboardHot100Songs::Song.sort_by_rank_this_week.each do |song|
             puts "#{@indent}RANK #{song.rank_this_week} (#{song.delta}) - PEAK #{song.peak_rank} - #{song.duration} WEEKS - #{song.name} - #{song.artist}"
         end
         puts""
@@ -225,7 +225,7 @@ class BillboardHot100::CLI
         puts ""
         puts "#{@indent}PEAK - RANK (CHANGE) - DURATION - SONG - ARTIST"
         puts ""
-        BillboardHot100::Song.sort_by_peak_rank.each do |song|
+        BillboardHot100Songs::Song.sort_by_peak_rank.each do |song|
             puts "#{@indent}PEAK #{song.peak_rank} - RANK #{song.rank_this_week} (#{song.delta}) - #{song.duration} WEEKS - #{song.name} - #{song.artist}"
         end
         puts ""
@@ -238,7 +238,7 @@ class BillboardHot100::CLI
         puts ""
         puts "#{@indent}DURATION - RANK (CHANGE) - PEAK - SONG - ARTIST"
         puts ""
-        BillboardHot100::Song.sort_by_duration.each do |song|
+        BillboardHot100Songs::Song.sort_by_duration.each do |song|
             puts "#{@indent}#{song.duration} WEEKS - RANK #{song.rank_this_week} (#{song.delta}) - PEAK #{song.peak_rank} - #{song.name} - #{song.artist}"
         end
         puts ""

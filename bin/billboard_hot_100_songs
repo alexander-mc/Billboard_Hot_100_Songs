@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require_relative '../lib/billboard_hot_100.rb'
+require_relative '../lib/billboard_hot_100_songs.rb'
 
-BillboardHot100::CLI.new.start
+BillboardHot100Songs::CLI.new.start

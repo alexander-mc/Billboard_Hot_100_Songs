@@ -1,5 +1,5 @@
 require "bundler/setup"
-require "billboard_hot_100"
+require "billboard_hot_100_songs"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
