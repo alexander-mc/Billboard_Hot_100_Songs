@@ -21,8 +21,10 @@ Go ahead and check it out. Enjoy!
   
 ## Preview  
 
-![Welcome Screen](/images/1_Welcome_Screen.png)
-  
+![Welcome Screen](/images/1_Welcome_Screen_200.png)
+![Welcome Screen](/images/1_Welcome_Screen_250.png)
+![Welcome Screen](/images/1_Welcome_Screen_300.png)
+
 ## Installation  
 
     $ gem install billboard_hot_100_songs
