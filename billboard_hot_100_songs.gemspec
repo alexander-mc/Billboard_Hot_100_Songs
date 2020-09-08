@@ -3,7 +3,7 @@ require_relative 'lib/billboard_hot_100_songs/version'
 Gem::Specification.new do |spec|
   spec.name          = "billboard_hot_100_songs"
   spec.version       = BillboardHot100Songs::VERSION
-  spex.date          = '2020-09-07'
+  spec.date          = '2020-09-07'
   spec.authors       = ["Alexander M. Clamor"]
   spec.email         = ["alexander.clamor@gmail.com"]
 
