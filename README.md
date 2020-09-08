@@ -21,9 +21,12 @@ Go ahead and check it out. Enjoy!
   
 ## Preview  
 
-![Welcome Screen](/images/1_Welcome_Screen_345.png)  
-
-![Welcome Screen](/images/1_Welcome_Screen_350.png)  
+![Welcome Screen](/images/1_Welcome_Screen)  
+![Analyses Menu](/images/2_Analyses_Menu)  
+![Datasets Menu](/images/3_Datasets_Menu)  
+![New Songs](/images/4_New_Songs)  
+![Datasets All Rank](/images/5_Datasets_All_Rank)  
+![Goodbye Screen](/images/6_Goodbye_Screen)  
 
 ## Installation  
 
