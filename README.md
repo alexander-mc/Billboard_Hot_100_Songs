@@ -1,22 +1,27 @@
-# Billboard Hot 100
+# Billboard Hot 100 Chart
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/billboard_hot_100`. To experiment with that code, run `bin/console` for an interactive prompt.
+Want to know what the hottest songs are this week? What about an easy way to get data from the Billboard Hot 100 without being bombarded with videos and ads?
 
-TODO: Delete this and the text above, and describe your gem
+This Ruby Gem allows you to access data on the Billboard Hot 100 (https://www.billboard.com/charts/hot-100) through the command line. Quickly generate the list of this week's Hot 100 songs with the following information,
+
+♪ Song name
+♪ Artist(s)
+♪ This week's rank
+♪ Change - The difference between this and last week's rank
+♪ Peak rank (or "Peak") - The highest rank that the song has ever reached on the Hot 100
+♪ Duration - The total number of weeks on the Hot 100
+
+You can even find answers to questions like,
+
+♪ Which songs are new this week?
+♪ Which songs have peaked #1?
+♪ Which songs have been on the charts the longest?
+
+Go ahead and check it out. Enjoy!
 
 ## Installation
 
 Add this line to your application's Gemfile:
-
-```ruby
-gem 'billboard_hot_100'
-```
-
-And then execute:
-
-    $ bundle install
-
-Or install it yourself as:
 
     $ gem install billboard_hot_100
 
