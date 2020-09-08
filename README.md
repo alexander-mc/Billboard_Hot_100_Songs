@@ -21,9 +21,7 @@ Go ahead and check it out. Enjoy!
   
 ## Preview  
 
-![Welcome Screen](/images/1_Welcome_Screen_330.png)  
-
-![Welcome Screen](/images/1_Welcome_Screen_340.png)  
+![Welcome Screen](/images/1_Welcome_Screen_345.png)  
 
 ![Welcome Screen](/images/1_Welcome_Screen_350.png)  
 
