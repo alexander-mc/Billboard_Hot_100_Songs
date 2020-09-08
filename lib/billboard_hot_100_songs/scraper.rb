@@ -6,9 +6,10 @@ class BillboardHot100Songs::Scraper
 
         page_data = Nokogiri::HTML(open(BASE_PATH))
 
-        # BACKUP HTML FOR OFFLINE USE - DATA IS FOR THE WEEK OF SEP. 5, 2020 
-        # To work offline, uncomment the next two lines below (lines 11 and 12) and comment above code + BASE_PATH (lines 3 and 7)
-        # html_backup = File.read('/Users/Alexander/Documents/Coding/Flatiron School/3_Projects/billboard_hot_100_songs/lib/billboard_hot_100_songs/backup_website/billboard_hot_100_songs.html')
+        # BACKUP HTML FOR OFFLINE USE
+        # To work offline, run the extractor in the backup_website folder to parse data you want to save
+        # Then uncomment the next two lines below (lines 12 and 13) and comment above code + BASE_PATH (lines 3 and 7)
+        # html_backup = File.read('')
         # page_data = Nokogiri::HTML(html_backup)       
         
         page_data.css("li.chart-list__element").map do |element|
