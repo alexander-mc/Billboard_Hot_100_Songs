@@ -21,9 +21,11 @@ Go ahead and check it out. Enjoy!
   
 ## Preview  
 
-![Welcome Screen](/images/1_Welcome_Screen_300.png)
-![Welcome Screen](/images/1_Welcome_Screen_325.png)
-![Welcome Screen](/images/1_Welcome_Screen_350.png)
+![Welcome Screen](/images/1_Welcome_Screen_300.png)  
+
+![Welcome Screen](/images/1_Welcome_Screen_325.png)  
+
+![Welcome Screen](/images/1_Welcome_Screen_350.png)  
 
 ## Installation  
 
