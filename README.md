@@ -19,7 +19,11 @@ You can even find answers to questions like,
   
 Go ahead and check it out. Enjoy!  
   
-## Installation
+## Preview  
+
+![Welcome Screen](/images/1_Welcome_Screen.png)
+  
+## Installation  
 
     $ gem install billboard_hot_100_songs
 
