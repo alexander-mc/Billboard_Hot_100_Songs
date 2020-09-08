@@ -1,4 +1,4 @@
-class BillboardHot100::Song
+class BillboardHot100Songs::Song
  
     attr_accessor :name, :artist, :rank_this_week, :rank_last_week, :delta, :peak_rank, :duration
     
