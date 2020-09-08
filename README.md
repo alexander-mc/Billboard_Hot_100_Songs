@@ -27,7 +27,7 @@ Go ahead and check it out. Enjoy!
 
 Type the below and follow the on screen prompts.
 
-    $ bin/billboard_top_songs
+    $ bin/billboard_hot_100_songs
 
 ## Development
 
