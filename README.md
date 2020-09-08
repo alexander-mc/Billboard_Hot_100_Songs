@@ -1,24 +1,24 @@
 # Billboard Hot 100 Songs
-
-Want to know what the hottest songs are this week? What about an easy way to get data from the Billboard Hot 100 without being bombarded with videos and ads?
-
-This Ruby Gem allows you to access data on the Billboard Hot 100 (https://www.billboard.com/charts/hot-100) from the command line. Quickly generate the list of this week's Hot 100 songs with the following information,
-
-♪ Song name
-♪ Artist(s)
-♪ This week's rank
-♪ Change - The difference between this and last week's rank
-♪ Peak rank (or "Peak") - The highest rank that the song has ever reached on the Hot 100
-♪ Duration - The total number of weeks on the Hot 100
-
-You can even find answers to questions like,
-
-♪ Which songs are new this week?
-♪ Which songs have peaked #1?
-♪ Which songs have been on the charts the longest?
-
-Go ahead and check it out. Enjoy!
-
+  
+Want to know what the hottest songs are this week? What about an easy way to get data from the Billboard Hot 100 without being bombarded with videos and ads?  
+  
+This Ruby Gem allows you to access data on the Billboard Hot 100 (https://www.billboard.com/charts/hot-100) from the command line. Quickly generate the list of this week's Hot 100 songs with the following information,  
+  
+♪ Song name  
+♪ Artist(s)  
+♪ This week's rank  
+♪ Change - The difference between this and last week's rank  
+♪ Peak rank (or "Peak") - The highest rank that the song has ever reached on the Hot 100  
+♪ Duration - The total number of weeks on the Hot 100  
+  
+You can even find answers to questions like,  
+  
+♪ Which songs are new this week?  
+♪ Which songs have peaked #1?  
+♪ Which songs have been on the charts the longest?  
+  
+Go ahead and check it out. Enjoy!  
+  
 ## Installation
 
     $ gem install billboard_hot_100_songs
