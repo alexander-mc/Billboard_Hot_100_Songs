@@ -1,7 +1,7 @@
 class BillboardHot100Songs::CLI
 
     def initialize  
-        create_songs
+        create_songs    
         @indent = " " * 12 # Adjust indent spacing to your preference
     end
 
