@@ -37,6 +37,7 @@ GEM
 
 PLATFORMS
   ruby
+  unknown
 
 DEPENDENCIES
   billboard_hot_100_songs!
