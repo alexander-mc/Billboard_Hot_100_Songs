@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    billboard_hot_100_songs (0.1.0)
+    billboard_hot_100_songs (1.0.0)
       colorize
       nokogiri
 

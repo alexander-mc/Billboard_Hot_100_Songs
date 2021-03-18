@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.description   = %q{Quickly generate the list of this week's hottest songs and more!}
   spec.homepage      = "https://github.com/alexander-mc/billboard_hot_100_songs"
   spec.license       = "MIT"
-  spec.required_ruby_version = Gem::Requirement.new("2.6.1")
+  spec.required_ruby_version = Gem::Requirement.new("~> 2.6.1")
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir        = "bin"
