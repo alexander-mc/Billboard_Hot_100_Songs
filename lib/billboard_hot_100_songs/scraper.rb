@@ -7,6 +7,7 @@ class BillboardHot100Songs::Scraper
 
         # BACKUP HTML FOR OFFLINE USE
         # To work offline, run the extractor in the backup_website folder to parse data you want to save
+        # To run the extractor, cd into the 'backup_website' directory. Then in your terminal enter: 'ruby extractor.rb'
         # Then uncomment the next two lines below (lines 12 and 13) and comment above code + BASE_PATH (lines 3 and 7)
         # html_backup = File.read('lib/billboard_hot_100_songs/backup_website/billboard_hot_100_songs.html')
         # page_data = Nokogiri::HTML(html_backup) 
