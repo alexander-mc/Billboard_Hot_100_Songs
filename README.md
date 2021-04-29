@@ -19,9 +19,9 @@ You can even find answers to questions like,
   
 Go ahead and check it out. Enjoy!
 
-## Live Demo
+## Demo
 
-+ [Live Demo](https://youtu.be/NDmtdVEbkQc) - Watch me demo the program
++ [Demo](https://youtu.be/NDmtdVEbkQc) - Watch me demo the program
 
 ## Preview  
 
