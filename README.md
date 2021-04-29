@@ -17,8 +17,12 @@ You can even find answers to questions like,
 ♪ Which songs have peaked #1?  
 ♪ Which songs have been on the charts the longest?  
   
-Go ahead and check it out. Enjoy!  
-  
+Go ahead and check it out. Enjoy!
+
+## Live Demo
+
++ [Live Demo](https://youtu.be/NDmtdVEbkQc) - Watch me demo the program
+
 ## Preview  
 
 ![Welcome Screen](/images/1_Welcome_Screen.png)  
