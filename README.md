@@ -21,7 +21,7 @@ Go ahead and check it out. Enjoy!
 
 ## Demo
 
-+ [Demo](https://youtu.be/NDmtdVEbkQc) - Watch me demo the program
++ [Demo](https://youtu.be/NDmtdVEbkQc) - Watch me demo the program.
 
 ## Preview  
 
