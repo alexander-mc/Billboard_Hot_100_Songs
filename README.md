@@ -38,7 +38,7 @@ Go ahead and check it out. Enjoy!
 
 ## Usage
 
-Type the below and follow the on screen prompts.
+Type the below and follow the on-screen prompts.
 
     $ bin/billboard_hot_100_songs
 
